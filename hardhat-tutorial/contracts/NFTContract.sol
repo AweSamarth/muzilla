@@ -5,17 +5,23 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 
 contract nftContract is ERC1155 {
-    uint256 public constant GOLD = 0;
-    uint256 public constant SILVER = 1;
-    uint256 public constant THORS_HAMMER = 2;
-    uint256 public constant SWORD = 3;
-    uint256 public constant SHIELD = 4;
+    uint256 public constant newtrack=0;
 
-    constructor() ERC1155("https://game.example/api/item/{id}.json") {
-        _mint(msg.sender, GOLD, 10**18, "");
-        _mint(msg.sender, SILVER, 10**27, "");
-        _mint(msg.sender, THORS_HAMMER, 1, "");
-        _mint(msg.sender, SWORD, 10**9, "");
-        _mint(msg.sender, SHIELD, 10**9, "");
+    constructor() ERC1155("https://bafybeic4vuwhhnl6ipohbc7ipr4cvyqjqnt2dwzz5qt4grkqnn4xixgaym.ipfs.nftstorage.link/") {
+
     }
+
+    function mint() public  payable{
+        _mint(msg.sender, newtrack, 1, "Congratulations!");
+    }
+
+
+
+
 }
+
+/*Song: Arcando - In My Head (feat. Britt Lari) [NCS Release]
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://NCS.io/InMyHead
+Watch: http://youtu.be/ 
+*/ 

@@ -1,5 +1,7 @@
 const { deployContract } = require("ethereum-waffle");
 const {ethers} = require ("hardhat");
+const { WHITELIST_CONTRACT_ADDRESS, METADATA_URL } = require("../constants");
+
 async function main(){
 
 
