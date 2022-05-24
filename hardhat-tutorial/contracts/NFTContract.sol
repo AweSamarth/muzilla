@@ -1,26 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
+import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
 
+contract nftContract is ERC1155 {
+    uint256 public constant GOLD = 0;
+    uint256 public constant SILVER = 1;
+    uint256 public constant THORS_HAMMER = 2;
+    uint256 public constant SWORD = 3;
+    uint256 public constant SHIELD = 4;
 
-contract Muzilla is ERC1155 {
-
-    // initialized the token name and id
-    uint256 public popMusicNFT = 1;
-
-    constructor() ERC1155("https://ipfs.io/ipfs/bafybeihjjkwdrxxjnuwevlqtqmh3iegcadc32sio4wmo7bv2gbf34qs34a/1.json"){
-        _mint(msg.sender, popMusicNFT, 100, "");
-    }
-
-    // if we have multiple NFTs then we can use this function to get url with NFT id
-    function uri(uint256 _tokenid) override public pure returns (string memory) {
-        return string(
-            abi.encodePacked(
-                "https://ipfs.io/ipfs/bafybeihjjkwdrxxjnuwevlqtqmh3iegcadc32sio4wmo7bv2gbf34qs34a/",
-                Strings.toString(_tokenid),".json"
-            )
-        );
+    constructor() ERC1155("https://game.example/api/item/{id}.json") {
+        _mint(msg.sender, GOLD, 10**18, "");
+        _mint(msg.sender, SILVER, 10**27, "");
+        _mint(msg.sender, THORS_HAMMER, 1, "");
+        _mint(msg.sender, SWORD, 10**9, "");
+        _mint(msg.sender, SHIELD, 10**9, "");
     }
 }
