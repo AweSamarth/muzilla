@@ -4,11 +4,14 @@ import "hardhat/console.sol";
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
+
+
 
 contract nftContract is ERC1155, Ownable{
-    uint256 public constant newtrack=0; 
+    uint256 public constant newtrack=1; 
 
-    constructor() ERC1155("https://bafybeic4vuwhhnl6ipohbc7ipr4cvyqjqnt2dwzz5qt4grkqnn4xixgaym.ipfs.nftstorage.link/") {
+    constructor() ERC1155("https://ipfs.io/ipfs://bafybeicxxqisagyxmeasorot6raxlesabuw7qviwacogvcnfzukqa2t324/{id}.json") {
         //this needs to be edited. as this is just a link to the music file uploaded to ipfs and filecoin via nftstorage
         // The uri needs to be here. the metadata of that should contain this info:
         /*Song: Arcando - In My Head (feat. Britt Lari) [NCS Release]
@@ -21,6 +24,14 @@ contract nftContract is ERC1155, Ownable{
     }
     function mint() public  payable{
         _mint(msg.sender, newtrack, 1, "Congratulations!");
+    }
+    function uri(uint256 _tokenid) override public pure returns (string memory) {
+        return string(
+            abi.encodePacked(
+                "https://ipfs.io/ipfs://bafybeicxxqisagyxmeasorot6raxlesabuw7qviwacogvcnfzukqa2t324/",
+                Strings.toString(_tokenid),".json"
+            )
+        );
     }
 
 
