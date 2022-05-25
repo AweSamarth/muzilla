@@ -9,7 +9,11 @@ contract nftContract is ERC1155, Ownable{
     uint256 public constant newtrack=0; 
 
     constructor() ERC1155("https://bafybeic4vuwhhnl6ipohbc7ipr4cvyqjqnt2dwzz5qt4grkqnn4xixgaym.ipfs.nftstorage.link/") {
-
+        //this needs to be edited. as this is just a link to the music file uploaded to ipfs and filecoin via nftstorage
+        // The uri needs to be here. the metadata of that should contain this info:
+        /*Song: Arcando - In My Head (feat. Britt Lari) [NCS Release]
+        Music provided by NoCopyrightSounds
+        link: http://NCS.io/InMyHead*/
     }
 
     function setURI(string memory newuri) public onlyOwner{
@@ -24,8 +28,5 @@ contract nftContract is ERC1155, Ownable{
 
 }
 
-/*Song: Arcando - In My Head (feat. Britt Lari) [NCS Release]
-Music provided by NoCopyrightSounds
-Free Download/Stream: http://NCS.io/InMyHead
-Watch: http://youtu.be/ 
-*/ 
+
+
