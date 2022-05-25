@@ -35,7 +35,7 @@ contract nftContract is ERC1155, Ownable{
     }
 
 
-
+//address of the smart contract: 0x8F788e5F71e007d3eD92E1e8Aff7bbDC32BE9507
 
 }
 
