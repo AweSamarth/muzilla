@@ -4,86 +4,100 @@ import styles from "../styles/Home.module.css";
 import NavBar from "../public/components/navBar";
 
 export default function Home() {
-  return (<>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="https://flowbite.com" className="flex items-center">
-          {/* <img
-            src="/docs/images/logo.svg"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
-          /> */}
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Muzilla
-          </span>
-        </a>
-        <button
-          data-collapse-toggle="mobile-menu"
-          type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <svg
-            className="hidden w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
+  return (
+    <>
+      <NavBar />
+      <div className="flex justify-center items-center h-[700px] w-full bg-slate-500 bg-[url('/images/nft-background.jpg')] bg-cover	 bg-center	">
+        <button className="p-4 bg-yellow-500 text-black  font-medium mt-40">
+          Connect Wallet
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <li>
-              <a
-                href="#"
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Services
-              </a>
-            </li>
-            
-          </ul>
+      </div>
+      <div id="about" className="flex justify-between items-center h-[600px] w-full bg-slate-500 bg-[url('/images/nft-background-2.jpg')] bg-cover	 bg-center	">
+        <div className="h-full w-[55%] flex justify-center items-center font-bold text-white">
+          <h1 className="text-5xl ">ABOUT MUZILLA</h1>
+        </div>
+        <div className="h-full w-[45%] bg-[#5a25b9] p-8 text-white text-justify">
+          <p>
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,
+            making it over 2000 years old. Richard McClintock, a Latin professor
+            at Hampden-Sydney College in Virginia, looked up one of the more
+            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+            going through the cites of the word in classical literature,
+            discovered the undoubtable source. Lorem Ipsum comes from sections
+            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
+            of Good and Evil) by Cicero, written in 45 BC. <br /> This book is a
+            treatise on the theory of ethics, very popular during the
+            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+            amet..", comes from a line in section 1.10.32. The standard chunk of
+            Lorem Ipsum used since the 1500s is reproduced below for those
+            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+            Malorum" by Cicero are also reproduced in their exact original form,
+            accompanied by English versions from the 1914 translation by H.
+            Rackham.
+          </p>
         </div>
       </div>
-    </nav>
-    <button className="flex justify-center items-center mt-50">Add Wallet</button>
-      </>
-
+      <div className=" h-[600px] w-full bg-slate-500 bg-[#e0cfff] pt-8	" id="features">
+        <div className="m-auto text-center">
+          <h1 className="text-4xl font-bold ">FEATURES</h1>
+        </div>
+        <div className="flex justify-around items-center h-[400px]	mt-14">
+          <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
+            <h2 className="font-medium text-xl text-yellow-400">FEATURE 1</h2>
+            <p className="mt-6 text-left">
+              comes from a line in section 1.10.32. The standard chunk of Lorem
+              Ipsum used since the 1500s is reproduced below for those
+              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
+              et Malorum" by Cicero are also reproduced in their exact original
+              form, accompanied by English versions from the 1914 translation by
+              H. Rackham.
+            </p>
+          </div>
+          <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
+            <h2 className="font-medium text-xl text-yellow-400">FEATURE 2</h2>
+            <p className="mt-6 text-left">
+              comes from a line in section 1.10.32. The standard chunk of Lorem
+              Ipsum used since the 1500s is reproduced below for those
+              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
+              et Malorum" by Cicero are also reproduced in their exact original
+              form, accompanied by English versions from the 1914 translation by
+              H. Rackham.
+            </p>
+          </div>
+          <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
+            <h2 className="font-medium text-xl text-yellow-400">FEATURE 3</h2>
+            <p className="mt-6 text-left">
+              comes from a line in section 1.10.32. The standard chunk of Lorem
+              Ipsum used since the 1500s is reproduced below for those
+              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
+              et Malorum" by Cicero are also reproduced in their exact original
+              form, accompanied by English versions from the 1914 translation by
+              H. Rackham.
+            </p>
+          </div>
+          <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
+            <h2 className="font-medium text-xl text-yellow-400">FEATURE 4</h2>
+            <p className="mt-6 text-left">
+              comes from a line in section 1.10.32. The standard chunk of Lorem
+              Ipsum used since the 1500s is reproduced below for those
+              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
+              et Malorum" by Cicero are also reproduced in their exact original
+              form, accompanied by English versions from the 1914 translation by
+              H. Rackham.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center items-center h-48 bg-[url('/images/music-wave-background.jpg')] bg-cover">
+        <button className="p-4  bg-yellow-500 text-black  font-medium mt-6 ">
+          Mint Your Music Now!
+        </button>
+      </div>
+      <div className="h-14 text-center mt-4 pb-10">
+       
+        Powered By Team Muzilla
+      </div>
+    </>
   );
 }
