@@ -37,7 +37,7 @@ export default function Home() {
           </button>
         ) : (
           <div className="p-4 bg-yellow-500 text-center">
-            <strong>You are connected to </strong>
+            <strong>Your connected account is</strong>
             <br /> {isConnected}
           </div>
         )}
@@ -50,24 +50,13 @@ export default function Home() {
           <h1 className="text-5xl ">ABOUT MUZILLA</h1>
         </div>
         <div className="h-full w-[45%] bg-[#5a25b9] p-8 text-white text-justify">
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC. <br /> This book is a
-            treatise on the theory of ethics, very popular during the
-            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-            amet..", comes from a line in section 1.10.32. The standard chunk of
-            Lorem Ipsum used since the 1500s is reproduced below for those
-            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-            Malorum" by Cicero are also reproduced in their exact original form,
-            accompanied by English versions from the 1914 translation by H.
-            Rackham.
+          <p id="aboutsection">
+            Muzilla is a music NFT marketplace and streaming platform. It is like a decentralized version of Spotify, with
+            a special touch of blockchain added on top. The blockchain aspect of this project is the standout feature. One can 
+            claim ownership of a track or an album. Artists will soon be able to sell special edition and exclusive edition
+            albums, tracks and collectibles. The team kept the fundamentals and the soul of web3 alive by focussing on decentralization
+            of data. We believe in empowering the ones who use our platform, ie. the artists and the listeners. Made with love,
+             hard-work and ERC1155
           </p>
         </div>
       </div>
@@ -80,47 +69,36 @@ export default function Home() {
         </div>
         <div className="flex justify-around items-center h-[400px]	mt-14">
           <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
-            <h2 className="font-medium text-xl text-yellow-400">FEATURE 1</h2>
+            <h2 className="font-medium text-xl text-yellow-400">REGULAR TRACKS</h2>
             <p className="mt-6 text-left">
-              comes from a line in section 1.10.32. The standard chunk of Lorem
-              Ipsum used since the 1500s is reproduced below for those
-              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-              et Malorum" by Cicero are also reproduced in their exact original
-              form, accompanied by English versions from the 1914 translation by
-              H. Rackham.
+              Regular Tracks are somewhat fungible in the sense that two tokens of the same track can be interchanged and 
+              exchanged without hassle. But, buying a different track is not possible directly. You would have to convert it 
+              to another token (like eth) and then buy the track you wish to buy using that eth. The price of the tracks in eth
+              depends completely on how valuable the people find them.
             </p>
           </div>
           <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
-            <h2 className="font-medium text-xl text-yellow-400">FEATURE 2</h2>
+            <h2 className="font-medium text-xl text-yellow-400">SPECIAL EDITION</h2>
             <p className="mt-6 text-left">
-              comes from a line in section 1.10.32. The standard chunk of Lorem
-              Ipsum used since the 1500s is reproduced below for those
-              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-              et Malorum" by Cicero are also reproduced in their exact original
-              form, accompanied by English versions from the 1914 translation by
-              H. Rackham.
+              Special edition albums will be functionally similar to regular albums but with a catch: their supply
+              will be very limited. The 
+              artists will be able to specify the max supply and those many number of copies will be created.This will allow fans to get access to rare content made by their favourite artists. 
             </p>
           </div>
           <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
-            <h2 className="font-medium text-xl text-yellow-400">FEATURE 3</h2>
+            <h2 className="font-medium text-xl text-yellow-400">OWNERSHIP</h2>
             <p className="mt-6 text-left">
-              comes from a line in section 1.10.32. The standard chunk of Lorem
-              Ipsum used since the 1500s is reproduced below for those
-              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-              et Malorum" by Cicero are also reproduced in their exact original
-              form, accompanied by English versions from the 1914 translation by
-              H. Rackham.
+              Artists will have the option to completely sell the rights of a certain track/album to someone. This will be possible
+              by storing all the copyright information in the metadata and modifying it when ownership gets transferred to someone
+              else. This will be completely non fungible, ie. only one of these can exist in the world per track/album.
             </p>
           </div>
           <div className=" bg-[#32246a] w-[22%] h-full p-6 text-center text-white">
-            <h2 className="font-medium text-xl text-yellow-400">FEATURE 4</h2>
+            <h2 className="font-medium text-xl text-yellow-400">EXCLUSIVE EDITION</h2>
             <p className="mt-6 text-left">
-              comes from a line in section 1.10.32. The standard chunk of Lorem
-              Ipsum used since the 1500s is reproduced below for those
-              interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum
-              et Malorum" by Cicero are also reproduced in their exact original
-              form, accompanied by English versions from the 1914 translation by
-              H. Rackham.
+              Exclusive edition tracks and albums will be a game-changer in the music industry, just like the project itself.
+              Artists will be able to deliver personalized content to their super-fans. We plan to implement generative NFTs to 
+              display the name of the buyer and the date of miniting of these NFTs. 
             </p>
           </div>
         </div>

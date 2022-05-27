@@ -7,7 +7,7 @@ const NavBar = ({ connected,connectWallet }) => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
           <img
-            src="/images/muzillaLogo.jpg"
+            src="/images/new logo huh.png"
             className="mr-3 h-8 sm:h-12"
             alt="Muzilla Logo"
           />
