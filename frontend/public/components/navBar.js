@@ -1,19 +1,19 @@
 import React from "react";
+import Link from 'next/link'
 
-
-const NavBar = () => {
+const NavBar = ({ connected,connectWallet }) => {
   return (
     <nav className="bg-[#500083] border-gray-200 px-2 sm:px-4 py-2.5">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <a href="https://flowbite.com" className="flex items-center">
-          {/* <img
-            src="/docs/images/logo.svg"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
-          /> */}
-          <span className=" text-white self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+        <a href="#" className="flex items-center">
+          <img
+            src="/images/muzillaLogo.jpg"
+            className="mr-3 h-8 sm:h-12"
+            alt="Muzilla Logo"
+          />
+          {/* <span className=" text-white self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             MUZILLA
-          </span>
+          </span> */}
         </a>
         <button
           data-collapse-toggle="mobile-menu"
@@ -50,6 +50,17 @@ const NavBar = () => {
         </button>
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <li>
+            <Link href="/">
+              <a
+                href="#"
+                className="block mt-2 py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white"
+                aria-current="page"
+              >
+                Home
+              </a>
+              </Link>
+            </li>
             <li>
               <a
                 href="#about"
@@ -67,19 +78,14 @@ const NavBar = () => {
                 Features
               </a>
             </li>
+
+
             <li>
-              <a
-                href="#"
-                className="block  mt-2 py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Collection
-              </a>
-            </li>
-   
-            <li>
-            <button className=" block py-2 pr-4 pl-3 bg-yellow-500 text-black  font-medium ">
-          Connect Wallet
-        </button>
+              {!connected ? (
+                <button className=" block py-2 pr-4 pl-3 bg-yellow-500 text-black  font-medium " onClick={connectWallet}>
+                  Connect Wallet
+                </button>
+              ) : <button className="block py-2 pr-4 pl-3 bg-yellow-500 text-black  font-medium"><Link href="/collection">Collection</Link></button>}
             </li>
           </ul>
         </div>

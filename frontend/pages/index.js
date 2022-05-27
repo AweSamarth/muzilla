@@ -1,18 +1,51 @@
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import NavBar from "../public/components/navBar";
+import Web3 from "web3";
 
 export default function Home() {
+  const [isConnected, setConnect] = useState("");
+
+  useEffect(() => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_accounts" })
+        .then((res) => setConnect(res[0]));
+    }
+  }, []);
+
+  const connectWallet = () => {
+    window.ethereum
+      .request({ method: "eth_requestAccounts" })
+      .then((res) => {
+        setConnect(res[0])
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <>
-      <NavBar />
+      <NavBar connected={isConnected} connectWallet={connectWallet} />
       <div className="flex justify-center items-center h-[700px] w-full bg-slate-500 bg-[url('/images/nft-background.jpg')] bg-cover	 bg-center	">
-        <button className="p-4 bg-yellow-500 text-black  font-medium mt-40">
-          Connect Wallet
-        </button>
+        {!isConnected ? (
+          <button
+            className="p-4 bg-yellow-500 text-black  font-medium mt-40"
+            onClick={connectWallet}
+          >
+            Connect Wallet
+          </button>
+        ) : (
+          <div className="p-4 bg-yellow-500 text-center">
+            <strong>You are connected to </strong>
+            <br /> {isConnected}
+          </div>
+        )}
       </div>
-      <div id="about" className="flex justify-between items-center h-[600px] w-full bg-slate-500 bg-[url('/images/nft-background-2.jpg')] bg-cover	 bg-center	">
+      <div
+        id="about"
+        className="flex justify-between items-center h-[600px] w-full bg-slate-500 bg-[url('/images/nft-background-2.jpg')] bg-cover	 bg-center	"
+      >
         <div className="h-full w-[55%] flex justify-center items-center font-bold text-white">
           <h1 className="text-5xl ">ABOUT MUZILLA</h1>
         </div>
@@ -38,7 +71,10 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className=" h-[600px] w-full bg-slate-500 bg-[#e0cfff] pt-8	" id="features">
+      <div
+        className=" h-[600px] w-full bg-slate-500 bg-[#e0cfff] pt-8	"
+        id="features"
+      >
         <div className="m-auto text-center">
           <h1 className="text-4xl font-bold ">FEATURES</h1>
         </div>
@@ -94,10 +130,7 @@ export default function Home() {
           Mint Your Music Now!
         </button>
       </div>
-      <div className="h-14 text-center mt-4 pb-10">
-       
-        Powered By Team Muzilla
-      </div>
+      <div className="h-14 mt-10 text-center mt-4 pb-10 flex justify-center items-center flex-col"><img src="/images/muzillaLogo.jpg" className="h-20 w-20 pb-2"/>Powered By Team Muzilla</div>
     </>
   );
 }
